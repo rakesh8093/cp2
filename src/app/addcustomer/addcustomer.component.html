@@ -1,0 +1,111 @@
+<div class="container">
+  <p-panel header="Add customer">
+    <form [formGroup]="form">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-3 d-flex">
+            <div class="col-md-4 mt-2">
+              <label for="carrier">Carrier</label>
+            </div>
+            <div class="col-md-8">
+              <p-dropdown></p-dropdown>
+            </div>
+          </div>
+          <div class="col-md-3 d-flex">
+            <div class="col-md-4 mt-2">
+              <label for="carrier">Country</label>
+            </div>
+            <div class="col-md-8">
+              <p-autoComplete></p-autoComplete>
+            </div>
+          </div>
+          <div class="col-md-4 d-flex">
+            <div class="col-md-4 mt-2">
+              <label for="carrier">BP Cord</label>
+            </div>
+            <div class="col-md-8">
+              <input type="text" pInputText />
+            </div>
+          </div>
+          <div class="col-md-2 ">
+            <div class="colbutton">
+              <button pButton type="button" label="search"></button>
+            </div>
+          </div>
+          <div class="col-12 mt-5">
+            <div class="row mb-2">
+              <div class="col-md-6 text-right">
+                <label for="BP Cord">BP Cord</label>
+              </div>
+              <div class="col-md-3">
+                <input type="text" formControlName="BPCord" pInputText />
+              </div>
+            </div>
+            <div class="row mb-2">
+              <div class="col-md-6 text-right">
+                <label for="BP Cord">Name</label>
+              </div>
+              <div class="col-md-3">
+                <input type="text" formControlName="Name" pattern="[A-Za-z]{0,20}" [ngClass]="{'errorForm': f.Name.errors && f.Name.touched}" pInputText />
+              </div>
+              <div class="errorMessage" *ngIf="f.Name.errors">Only alphabets allowed</div>
+            </div>
+            <div class="row mb-2">
+              <div class="col-md-6 text-right">
+                <label for="BP Cord">Short Name</label>
+              </div>
+              <div class="col-md-3">
+                <input type="text" formControlName="ShortName" pattern="[A-Za-z]{0,20}" [ngClass]="{'errorForm': f.Name.errors && f.Name.touched}" pInputText />
+              </div>
+              <div class="errorMessage" *ngIf="f.Name.errors">Only alphabets allowed</div>
+            </div>
+            <div class="row mb-2">
+              <div class="col-md-6 text-right">
+                <label for="BP Cord">Qulification</label>
+              </div>
+              <div class="col-md-3">
+                <input type="text" formControlName="Qulification" pattern="[A-Za-z]{0,20}" [ngClass]="{'errorForm': f.Name.errors && f.Name.touched}" pInputText />
+              </div>
+              <div class="errorMessage" *ngIf="f.Name.errors">Only alphabets allowed</div>
+            </div>
+            <div class="row mb-2">
+              <div class="col-md-6 text-right">
+                <label for="BP Cord">Ultimate Owner</label>
+              </div>
+              <div class="col-md-3">
+                <p-checkbox ></p-checkbox>
+              </div>
+            </div>
+            <div class="row mb-2">
+              <div class="col-md-6 text-right">
+                <label for="BP Cord">Global Account</label>
+              </div>
+              <div class="col-md-3">
+                <p-checkbox ></p-checkbox>
+              </div>
+            </div>
+            <div class="row mb-2">
+              <div class="col-md-6 text-right">
+                <label for="BP Cord">Local VIP</label>
+              </div>
+              <div class="col-md-3">
+                <p-checkbox ></p-checkbox>
+              </div>
+            </div>
+            <div class="row mb-2 ">
+              <div class="col-md-6 text-right">
+                <button pButton type="button" label="Save" class="ui-button-success"></button>
+              </div>
+              <div class="col-md-6 text-left">
+                <button pButton type="button" label="Cancel" class="ui-button-danger"></button>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </form>
+  </p-panel>
+</div>
+

@@ -1,0 +1,658 @@
+<div class="container-fluid">
+  <form>
+    <p-panel header="Title" [toggleable]="true">
+      <div class="d-flex mt-1">
+        <h6 class="mt-1">Booking Reference</h6>
+        <div class="pt-1 mx-3">
+          <input type="text" pInputText />
+        </div>
+        <div class="pb-1 pl-1 pr-1">
+          <button type="button" class="btn btn-primary btn-sm">FETCH</button>
+        </div>
+      </div>
+      <div class="p-grid mt-2">
+        <div class="p-col">
+          <div class="form-group row mt-1">
+            <div class="col-md-5">
+              <label for="scn" class="">Carrier </label>
+            </div>
+            <div class="col-md-7">
+              <p-dropdown></p-dropdown>
+              <!-- <div class="text-danger error-text" *ngIf="(scn.dirty || scn.touched) && scn.errors?.required">SCN# is required.</div> -->
+            </div>
+          </div>
+        </div>
+        <div class="p-col">
+          <div class="form-group row">
+            <div class="col-md-5">
+              <label for="accountNameText" class="col-form-label-sm"
+                >Country</label
+              >
+            </div>
+            <div class="col-md-5">
+              <p-autoComplete></p-autoComplete>
+            </div>
+          </div>
+        </div>
+        <div class="p-col">
+          <div class="form-group row">
+            <div class="col-md-5">
+              <label for="accountNameText" class="col-form-label-sm"
+                >Department</label
+              >
+            </div>
+            <div class="col-md-5">
+              <p-autoComplete></p-autoComplete>
+            </div>
+          </div>
+        </div>
+        <div class="p-col">
+          <div class="form-group row">
+            <div class="col-md-5">
+              <label for="accountNameText" class="col-form-label-sm"
+                >Partner Reference</label
+              >
+            </div>
+            <div class="col-md-6">
+              <input type="text" pInputText class="ui-inputtext" />
+            </div>
+          </div>
+        </div>
+        <div class="p-col ml-3">
+          <div class="form-group row">
+            <div class="col-md-5">
+              <label for="accountNameText" class="col-form-label-sm"
+                >Shipment Port</label
+              >
+            </div>
+            <div class="col-md-5">
+              <p-autoComplete></p-autoComplete>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-grid">
+        <div class="p-col-6">
+          <p-fieldset legend="Origin">
+            <div class="p-formgroup-inline">
+              <div class="p-field p-col-2">
+                <label for="firstname5" class="col-form-label-sm">POL</label>
+                <p-autoComplete></p-autoComplete>
+              </div>
+              <div class="p-field p-col-2">
+                <label for="lastname5" class="col-form-label-sm">POO</label>
+                <p-autoComplete></p-autoComplete>
+              </div>
+              <div class="p-field p-col-2">
+                <label for="firstname5" class="col-form-label-sm"
+                  >Movement-Terms</label
+                >
+                <p-dropdown></p-dropdown>
+              </div>
+              <div class="p-field p-col-2">
+                <label for="lastname5" class="col-form-label-sm"
+                  >Transport-Mode</label
+                >
+                <p-dropdown></p-dropdown>
+              </div>
+              <div class="p-field-checkbox p-col-1 mt-4">
+                <p-radioButton
+                  name="city7"
+                  value="MH"
+                  inputId="city7"
+                ></p-radioButton>
+                <label for="city7">MH</label>
+              </div>
+              <div class="p-field-checkbox p-col-1 mt-4">
+                <p-radioButton
+                  name="city7"
+                  value="CH"
+                  inputId="city7"
+                ></p-radioButton>
+                <label for="city8">CH</label>
+              </div>
+            </div>
+          </p-fieldset>
+        </div>
+
+        <div class="p-col-6">
+          <p-fieldset legend="Destination">
+            <div class="p-formgroup-inline">
+              <div class="p-field p-col-2">
+                <label for="firstname5" class="col-form-label-sm">POL</label>
+                <p-autoComplete></p-autoComplete>
+              </div>
+              <div class="p-field p-col-2">
+                <label for="lastname5" class="col-form-label-sm">POO</label>
+                <p-autoComplete></p-autoComplete>
+              </div>
+              <div class="p-field p-col-2">
+                <label for="firstname5" class="col-form-label-sm"
+                  >Movement-Terms</label
+                >
+                <p-dropdown></p-dropdown>
+              </div>
+              <div class="p-field p-col-2">
+                <label for="lastname5" class="col-form-label-sm"
+                  >Transport-Mode</label
+                >
+                <p-dropdown></p-dropdown>
+              </div>
+              <div class="p-field-checkbox p-col-1 mt-4">
+                <p-radioButton
+                  name="city7"
+                  value="MH"
+                  inputId="city7"
+                ></p-radioButton>
+                <label for="city7">MH</label>
+              </div>
+              <div class="p-field-checkbox p-col-1 mt-4">
+                <p-radioButton
+                  name="city7"
+                  value="CH"
+                  inputId="city7"
+                ></p-radioButton>
+                <label for="city8">CH</label>
+              </div>
+            </div>
+          </p-fieldset>
+        </div>
+      </div>
+      <div class="p-grid">
+        <div class="p-col-6">
+          <p-fieldset legend="Perties">
+            <div class="p-formgroup-inline">
+              <div class="p-field">
+                <label for="firstname">Role:</label>
+                <input id="firstname" type="text" pInputText />
+              </div>
+              <div class="p-field">
+                <label for="lastname">BP Code:</label>
+                <input id="lastname" type="text" pInputText />
+              </div>
+              <button
+                type="button"
+                class="btn btn-primary btn-sm"
+                (click)="addRole()"
+              >
+                Add Role
+              </button>
+            </div>
+
+            <div class="p-grid" *ngFor="let row of role; let i = index">
+              <div class="p-col-4">
+                <label for="firstname"
+                  >Role:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label
+                >
+                <input id="firstname{{ i }}" type="text" pInputText />
+              </div>
+              <div class="p-col-4">
+                <label for="lastname">BP Code:</label>
+                <input id="lastname{{ i }}" type="text" pInputText />
+              </div>
+              <div class="p-col-4">
+                <label for="name">Name:&nbsp;&nbsp;</label>
+                <input id="name{{ i }}" type="text" pInputText />
+              </div>
+            </div>
+          </p-fieldset>
+        </div>
+        <div class="p-col-3">
+          <p-fieldset legend="Quotation & Charges">
+            <div class="ui-fluid">
+              <div class="p-field p-grid">
+                <label for="firstname" class="p-col-2 p-md-6"
+                  >US-SVC Ref/GA.Ref/Quot.Ref</label
+                >
+                <div class="p-col-2 p-md-6">
+                  <input id="firstname" type="text" pInputText />
+                </div>
+                <div class="p-field-checkbox p-col-2 mt-4">
+                  <p-radioButton
+                    name="city7"
+                    value="MH"
+                    inputId="city7"
+                  ></p-radioButton>
+                  <label for="city7">MH</label>
+                </div>
+                <div class="p-field-checkbox p-col-2 mt-4">
+                  <p-radioButton
+                    name="city7"
+                    value="CH"
+                    inputId="city7"
+                  ></p-radioButton>
+                  <label for="city8">CH</label>
+                </div>
+                <div class="p-field p-col-2 mt-4">
+                  <label for="firstname2">POP: </label>
+                </div>
+                <div class="p-field p-col-6 mt-4">
+                  <p-autoComplete></p-autoComplete>
+                </div>
+              </div>
+            </div>
+          </p-fieldset>
+        </div>
+        <div class="p-col-3 mt-4">
+          <div class="ui-fluid">
+            <div class="p-field p-grid">
+              <label for="firstname" class="p-col-12 p-md-6"
+                >Location City</label
+              >
+              <div class="p-col-12 p-md-6">
+                <p-autoComplete></p-autoComplete>
+              </div>
+            </div>
+            <div class="p-field p-grid">
+              <label for="lastname" class="p-col-12 p-md-6"
+                >Preferred Deopt</label
+              >
+              <div class="p-col-12 p-md-6">
+                <p-autoComplete></p-autoComplete>
+              </div>
+            </div>
+            <div class="p-field p-grid">
+              <label for="lastname" class="p-col-12 p-md-6"
+                >Customer Remark</label
+              >
+              <div class="p-col-12 p-md-6">
+                <input id="lastname1" type="text" pInputText />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="p-grid">
+        <div class="p-col-12">
+          <p-fieldset legend="Equipment & Commodity">
+            <div class="d-flex w-100 justify-content-end">
+              <button class="btn btn-primary btn-sm"  (click)="addEqp()">Add</button>
+            </div>
+            <div [ngClass]="eqp.length > 1 ? 'border-bottom mb-4' : ''" *ngFor="let row of eqp; let k = index">
+              <div class="row row-bottom-margin mt-2">
+                <div class="col">
+                  <div class="form-group row">
+                    <div class="col-md-5">
+                      <label for="scn" class="col-form-label-sm">Size </label>
+                    </div>
+                    <div class="col-md-5">
+                      <p-dropdown></p-dropdown>
+                      <!-- <div class="text-danger error-text" *ngIf="(scn.dirty || scn.touched) && scn.errors?.required">SCN# is required.</div> -->
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-group row">
+                    <div class="col-md-5">
+                      <label for="accountNameText" class="col-form-label-sm"
+                        >Total Qty:</label
+                      >
+                    </div>
+                    <div class="col-md-5">
+                      <input type="text" pInputText />
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-group row">
+                    <div class="col-md-5">
+                      <label for="accountNameText" class="col-form-label-sm"
+                        >Net wt/Ctr:</label
+                      >
+                    </div>
+                    <div class="col-md-5">
+                      <input type="text" pInputText />
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-group row">
+                    <div class="col-md-5">
+                      <label for="accountNameText" class="col-form-label-sm"
+                        >Commodity</label
+                      >
+                    </div>
+                    <div class="col-md-5">
+                      <input type="text" pInputText />
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-group row">
+                    <div class="col-md-4">
+                      <label for="accountNameText" class="col-form-label-sm"
+                        >Comm Desc</label
+                      >
+                    </div>
+                    <div class="col-md-5">
+                      <input type="text" pInputText />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row row-bottom-margin mt-2">
+                <div class="col">
+                  <div class="form-group row">
+                    <div class="col-md-5">
+                      <label for="scn" class="col-form-label-sm"
+                        >RF Humidity
+                      </label>
+                    </div>
+                    <div class="col-md-5">
+                      <input type="text" pInputText />
+                      <!-- <div class="text-danger error-text" *ngIf="(scn.dirty || scn.touched) && scn.errors?.required">SCN# is required.</div> -->
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-group row">
+                    <div class="col-md-5">
+                      <label for="accountNameText" class="col-form-label-sm"
+                        >RF Min Temp:</label
+                      >
+                    </div>
+                    <div class="col-md-5">
+                      <input type="text" pInputText />
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-group row">
+                    <div class="col-md-5">
+                      <label for="accountNameText" class="col-form-label-sm"
+                        >RF Carr.Temp:
+                      </label>
+                    </div>
+                    <div class="col-md-5">
+                      <input type="text" pInputText />
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-group row">
+                    <div class="col-md-5">
+                      <label for="accountNameText" class="col-form-label-sm"
+                        >RF Preset Temp:</label
+                      >
+                    </div>
+                    <div class="col-md-5">
+                      <input type="text" pInputText />
+                    </div>
+                  </div>
+                </div>
+                <div class="col">
+                  <div class="form-group row">
+                    <div class="col-md-4">
+                      <label for="accountNameText" class="col-form-label-sm"
+                        >RF Venti %:</label
+                      >
+                    </div>
+                    <div class="col-md-5">
+                      <input type="text" pInputText />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row row-bottom-margin mt-2">
+                <div class="p-formgroup-inline pl-3">
+                  <div class="p-field-checkbox mr-1">
+                    <p-checkbox
+                      name="city3"
+                      value="Chicago"
+                      inputId="city3"
+                    ></p-checkbox>
+                    <label for="city3" class="mr-1 ml-1">SOC</label>
+                  </div>
+                  <div class="p-field-checkbox mr-1">
+                    <p-checkbox
+                      name="city4"
+                      value="Los Angeles"
+                      inputId="city4"
+                    ></p-checkbox>
+                    <label for="city4" class="mr-1 ml-1">FUM</label>
+                  </div>
+                  <div class="p-field-checkbox mr-1">
+                    <p-checkbox
+                      name="city3"
+                      value="Chicago"
+                      inputId="city3"
+                    ></p-checkbox>
+                    <label for="city3" class="mr-1 ml-1">Genset Required</label>
+                  </div>
+                  <div class="p-field-checkbox mr-1">
+                    <p-checkbox
+                      name="city4"
+                      value="Los Angeles"
+                      inputId="city4"
+                    ></p-checkbox>
+                    <label for="city4" class="mr-1 ml-1">FX</label>
+                  </div>
+                  <div class="p-field-checkbox mr-1">
+                    <p-checkbox
+                      name="city3"
+                      value="Chicago"
+                      inputId="city3"
+                    ></p-checkbox>
+                    <label for="city3" class="mr-1 ml-1">HAZ</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </p-fieldset>
+        </div>
+      </div>
+      <div class="d-flex w-100 justify-content-end">
+        <button class="btn btn-success btn-sm">Submit</button>
+      </div>
+    </p-panel>
+    <p-panel header="Customer Preferance" [toggleable]="true">
+      <div class="pt-1 pb-3 mx-auto row">
+        <div class="col-md-12">
+          <p-fieldset legend="Customer Performance" class="fieldSet">
+            <div class="row">
+              <div class="col-md-3">
+                <p-fieldset legend="General Booking Remarks">
+                  <textarea
+                    [rows]="3"
+                    pInputTextarea
+                    autoResize="autoResize"
+                  ></textarea>
+                </p-fieldset>
+
+                <p-fieldset legend="Intermodel">
+                  <textarea
+                    [rows]="3"
+                    pInputTextarea
+                    autoResize="autoResize"
+                  ></textarea>
+                </p-fieldset>
+
+                <p-fieldset legend="Place Of Payment">
+                  <textarea
+                    [rows]="3"
+                    pInputTextarea
+                    autoResize="autoResize"
+                  ></textarea>
+                </p-fieldset>
+              </div>
+
+              <div class="col-md-3">
+                <p-fieldset legend="Routing">
+                  <textarea
+                    [rows]="3"
+                    pInputTextarea
+                    autoResize="autoResize"
+                  ></textarea>
+                </p-fieldset>
+
+                <p-fieldset legend="Charges">
+                  <textarea
+                    [rows]="3"
+                    pInputTextarea
+                    autoResize="autoResize"
+                  ></textarea>
+                </p-fieldset>
+
+                <p-fieldset legend="Currency">
+                  <textarea
+                    [rows]="3"
+                    pInputTextarea
+                    autoResize="autoResize"
+                  ></textarea>
+                </p-fieldset>
+              </div>
+
+              <div class="col-md-3">
+                <p-fieldset legend="Equipment">
+                  <textarea
+                    [rows]="3"
+                    pInputTextarea
+                    autoResize="autoResize"
+                  ></textarea>
+                </p-fieldset>
+
+                <p-fieldset legend="Prepaid / Collect">
+                  <textarea
+                    [rows]="3"
+                    pInputTextarea
+                    autoResize="autoResize"
+                  ></textarea>
+                </p-fieldset>
+
+                <p-fieldset legend="Other Freight Remarks">
+                  <textarea
+                    [rows]="3"
+                    pInputTextarea
+                    autoResize="autoResize"
+                  ></textarea>
+                </p-fieldset>
+              </div>
+              <div class="col-md-3">
+                <p-fieldset legend="Commdity">
+                  <textarea
+                    [rows]="3"
+                    pInputTextarea
+                    autoResize="autoResize"
+                  ></textarea>
+                </p-fieldset>
+
+                <p-fieldset legend="Paying Entity">
+                  <textarea
+                    [rows]="3"
+                    pInputTextarea
+                    autoResize="autoResize"
+                  ></textarea>
+                </p-fieldset>
+              </div>
+            </div>
+          </p-fieldset>
+        </div>
+      </div>
+    </p-panel>
+    <p-panel header="Customer Preferance" [toggleable]="true">
+      <div class="pt-1 pb-3 mx-auto row">
+        <div class="col-md-12">
+          <p-fieldset legend="Customer Performance" class="fieldSet">
+            <div class="row">
+              <div class="col-md-3">
+                <p-fieldset legend="General Booking Remarks">
+                  <textarea
+                    [rows]="3"
+                    pInputTextarea
+                    autoResize="autoResize"
+                  ></textarea>
+                </p-fieldset>
+
+                <p-fieldset legend="Intermodel">
+                  <textarea
+                    [rows]="3"
+                    pInputTextarea
+                    autoResize="autoResize"
+                  ></textarea>
+                </p-fieldset>
+
+                <p-fieldset legend="Place Of Payment">
+                  <textarea
+                    [rows]="3"
+                    pInputTextarea
+                    autoResize="autoResize"
+                  ></textarea>
+                </p-fieldset>
+              </div>
+
+              <div class="col-md-3">
+                <p-fieldset legend="Routing">
+                  <textarea
+                    [rows]="3"
+                    pInputTextarea
+                    autoResize="autoResize"
+                  ></textarea>
+                </p-fieldset>
+
+                <p-fieldset legend="Charges">
+                  <textarea
+                    [rows]="3"
+                    pInputTextarea
+                    autoResize="autoResize"
+                  ></textarea>
+                </p-fieldset>
+
+                <p-fieldset legend="Currency">
+                  <textarea
+                    [rows]="3"
+                    pInputTextarea
+                    autoResize="autoResize"
+                  ></textarea>
+                </p-fieldset>
+              </div>
+
+              <div class="col-md-3">
+                <p-fieldset legend="Equipment">
+                  <textarea
+                    [rows]="3"
+                    pInputTextarea
+                    autoResize="autoResize"
+                  ></textarea>
+                </p-fieldset>
+
+                <p-fieldset legend="Prepaid / Collect">
+                  <textarea
+                    [rows]="3"
+                    pInputTextarea
+                    autoResize="autoResize"
+                  ></textarea>
+                </p-fieldset>
+
+                <p-fieldset legend="Other Freight Remarks">
+                  <textarea
+                    [rows]="3"
+                    pInputTextarea
+                    autoResize="autoResize"
+                  ></textarea>
+                </p-fieldset>
+              </div>
+              <div class="col-md-3">
+                <p-fieldset legend="Commdity">
+                  <textarea
+                    [rows]="3"
+                    pInputTextarea
+                    autoResize="autoResize"
+                  ></textarea>
+                </p-fieldset>
+
+                <p-fieldset legend="Paying Entity">
+                  <textarea
+                    [rows]="3"
+                    pInputTextarea
+                    autoResize="autoResize"
+                  ></textarea>
+                </p-fieldset>
+              </div>
+            </div>
+          </p-fieldset>
+        </div>
+      </div>
+    </p-panel>
+  </form>
+</div>

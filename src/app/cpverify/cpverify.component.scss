@@ -1,0 +1,60 @@
+*{
+  font-size: small;
+}
+
+.col-form-label-sm {
+margin-right: -28px !important;
+font-size: 0.9em !important;
+}
+
+:host {
+  ::ng-deep .ui-dropdown {
+    min-width: 5rem !important;
+
+
+  }
+  ::ng-deep fieldset {
+    padding-top: 0 !important;
+    legend {
+      display: block;
+      font-size: small;
+      width: auto;
+      max-width: 100%;
+      padding: 0;
+      margin-bottom: 0 !important;
+      font-size: 1em !important;
+      line-height: inherit;
+      color: inherit;
+      white-space: normal;
+    }
+  }
+  ::ng-deep textarea{
+    width: 100% !important;
+    height: 40px !important;
+  }
+  // ::ng-deep{
+  //   .ui-autocomplete{
+  //    .ui-autocomplete-input {
+  //     padding: 0.429em;
+  //     min-width: 25px !important;
+  //     width: 100% !important;
+  //    }
+  //   }
+  // }
+  ::ng-deep .p-field.p-grid  label {
+    margin-bottom: 0;
+    display: flex;
+    align-items: baseline;
+  }
+  ::ng-deep .p-field.p-grid label {
+    margin-bottom: 0;
+    display: flex;
+    align-items: baseline;
+  }
+  ::ng-deep body .ui-inputtext{
+    min-width: 50px;
+    width: 100%;
+  }
+
+
+}
